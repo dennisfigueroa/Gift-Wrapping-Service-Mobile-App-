@@ -1,18 +1,19 @@
-import React, {useState} from 'react';
-import { ImageBackground, StyleSheet, View, Button, TextInput } from 'react-native';
+import React from 'react';
+import { ImageBackground, StyleSheet, View, Button} from 'react-native';
 
 
-function WelcomeScreen() {
-
+function WelcomeScreen({navigation}) {
+    
     const loginHandler = () => {
-        const [userName, setUserName] = useState('');
-        console.log("This works.'")
+    
+        navigation.navigate('Login');
     }
 
     return (
         <ImageBackground
             style={styles.background}
             source={require("../assets/gift.jpeg")}>    
+            
             <View
                 style={styles.loginButton}
             >
@@ -51,7 +52,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
 
-    }
+    },
+   
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+      },
 })
 
 export default WelcomeScreen;
