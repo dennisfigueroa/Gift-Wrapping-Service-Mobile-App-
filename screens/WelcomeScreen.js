@@ -9,6 +9,10 @@ function WelcomeScreen({navigation}) {
         navigation.navigate('Login');
     }
 
+    const registerHandler = () => {
+        navigation.navigate('Register')
+    }
+
     return (
         <ImageBackground
             style={styles.background}
@@ -26,6 +30,7 @@ function WelcomeScreen({navigation}) {
             <View style={styles.registerButton}>
                 <Button title="REGISTER"
                 color ="#000000"
+                onPress={registerHandler}
                  />
             </View>
         </ImageBackground>
